@@ -10,16 +10,8 @@ import { ProductService } from '../product/product.service';
 })
 export class HomeComponent implements OnInit {
 
-  // products: Product[];
-
-  // constructor(private productService: ProductService) { }
-
-  // getProducts(): void {
-  //   this.productService.getProducts().then(products => this.products = products);
-  // }
 
   ngOnInit(): void {
-    // this.getProducts();
   }
 
 }
