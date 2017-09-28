@@ -12,16 +12,23 @@ import { FormsModule } from '@angular/forms';
 })
 export class RegisterComponent {
 
+  sucessoCadastro = '';
   model: any = {};
-  messa: String;
+  message: String = '';
+  errorMessage: String;
+  sucessMessage: String;
 
   constructor(
     private router: Router,
     private userService: UserService) { }
 
     register() {
-      this.userService.create(this.model);
-      this.router.navigate(['/login']);
+      this.userService.create(this.model).then(
+        sucess => {
+          this.sucessoCadastro = 'true';
+      }, error => {
+          this.sucessoCadastro = 'false';
+      });
     }
 
 }

@@ -29,6 +29,11 @@ export class UserService {
           JSON.stringify({userName: user.userName, UserEmail: user.userEmail, UserPassword: user.userPassword}), {headers: this.headers})
           .toPromise()
           .then(res => res.json().data as User)
-          .catch(res => this.message = res.json());
+          .catch(this.handleError);
+      }
+
+      private handleError(error: any): Promise<any> {
+        console.error('An error occurred', error);
+        return Promise.reject(error.message || error);
       }
 }
