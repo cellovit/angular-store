@@ -12,6 +12,8 @@ import { FormsModule } from '@angular/forms';
 })
 export class RegisterComponent {
 
+  // mini gambiarra de verificador do tipo string porque boolean sempre inicializa como false
+
   sucessoCadastro = '';
   model: any = {};
 
