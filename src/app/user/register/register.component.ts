@@ -14,9 +14,6 @@ export class RegisterComponent {
 
   sucessoCadastro = '';
   model: any = {};
-  message: String = '';
-  errorMessage: String;
-  sucessMessage: String;
 
   constructor(
     private router: Router,
@@ -29,6 +26,10 @@ export class RegisterComponent {
       }, error => {
           this.sucessoCadastro = 'false';
       });
+    }
+
+    gotoLogin() {
+      this.router.navigate(['/login']);
     }
 
 }
