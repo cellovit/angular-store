@@ -4,6 +4,7 @@ import { Product } from './product.model';
 import { ProductService } from './product.service';
 import { RouterModule } from '@angular/router';
 import {Headers, Response} from '@angular/http';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -13,7 +14,7 @@ import {Headers, Response} from '@angular/http';
 })
 export class ProductComponent implements OnInit {
 
-  constructor(private productService: ProductService) { }
+  constructor(private productService: ProductService, private router: Router) { }
 
   products: Product[];
 
@@ -24,6 +25,10 @@ export class ProductComponent implements OnInit {
   ngOnInit(): void {
     // this.productService.addProduct();
     this.getProducts();
+  }
+
+  gotoDetail(id: string): void {
+    this.router.navigate(['/product-detail' + '/' + id]);
   }
 
 

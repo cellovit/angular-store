@@ -20,4 +20,8 @@ export class ProductService {
         return this.http.get(this.serviceUrl).toPromise().then(response => response.json() as Product[]);
     }
 
+    getProduct(id: string): Promise<Product> {
+        return this.http.get(this.serviceUrl + '/' + id).toPromise().then(response => response.json() as Product);
+    }
+
 }

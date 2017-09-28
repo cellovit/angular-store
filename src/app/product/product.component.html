@@ -1,11 +1,11 @@
 <h2>Produtos</h2>
 <ul class="products">
-  <a *ngFor="let product of products">
+  <a (click)="gotoDetail(product.id)" [routerLink]="['/product-detail', product.id]" *ngFor="let product of products">
     {{product.productName}}   <br/> 
   </a>
   
 </ul>
-
-<app-post-test></app-post-test>
+<!-- 
+<app-post-test></app-post-test> -->
 
 <app-product-detail [product]="selectedProduct"></app-product-detail>
