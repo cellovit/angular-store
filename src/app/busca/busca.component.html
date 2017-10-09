@@ -1,0 +1,11 @@
+<div id="busca-component" class="col-md-6 col-md-offset-5">
+  <h2>Busca de Produtos</h2>
+  <label>Nome:</label>
+  <input #searchBox id="search-box"  class="form-control" (keyup)="search(searchBox.value)" />
+  <div>
+    <div *ngFor="let product of products | async"
+         (click)="gotoDetail(product)" class="search-result" >
+      {{product.name}}
+    </div>
+  </div>
+</div>
