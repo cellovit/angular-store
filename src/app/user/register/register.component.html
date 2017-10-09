@@ -27,7 +27,7 @@
           <div *ngIf="f.submitted && !userPassword.valid" class="help-block">Campo Obrigatório</div>
       </div>
       <div class="form-group">
-          <button [disabled]="loading" class="btn btn-primary">Cadastrar</button>
+          <button class="btn btn-primary">Cadastrar</button>
           <button  *ngIf="sucessoCadastro === 'true'" (click)="gotoLogin()" class="btn btn-default"> Ir para página de Login</button>
         </div>
   </form>
