@@ -11,7 +11,7 @@ import {Http, Response, RequestOptions, Headers} from '@angular/http';
 @Injectable()
 export class ProductService {
 
-    private serviceUrl = 'http://localhost:1746/product';
+    private serviceUrl = 'https://34.208.243.21:5000/product';
     private headers = new Headers({'Content-Type': 'application/json'});
 
     constructor(private http: Http) { }
