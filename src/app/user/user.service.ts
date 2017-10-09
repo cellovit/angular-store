@@ -9,7 +9,7 @@ import { Http, Response, RequestOptions, Headers } from '@angular/http';
 @Injectable()
 export class UserService {
 
-  private serviceUrl = 'http://34.208.243.21:5000/user';
+  private serviceUrl = 'https://34.208.243.21:5000/user';
   private headers = new Headers({ 'Content-Type': 'application/json' });
   message: String = '';
 
