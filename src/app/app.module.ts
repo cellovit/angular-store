@@ -15,7 +15,7 @@ import {ProductDetailComponent} from './product-detail/product-detail.component'
 import {HomeComponent} from './home/home.component';
 import {PostTestComponent} from './post-test/post-test.component';   // test only
 import {UserComponent} from './user/user.component';
-import {ProductBuscaComponent} from './busca/busca.component'
+// import {ProductBuscaComponent} from './busca/busca.component'
 
 import {RegisterComponent} from './user/register/register.component';
 import {LoginComponent} from './user/login/login.component';
@@ -25,7 +25,7 @@ import {LoginComponent} from './user/login/login.component';
 import {PostService} from './post-test/post.service';
 import {ProductService} from './product/product.service';
 import {UserService} from './user/user.service';
-import {ProductBuscaService} from './busca/busca.service';
+// import {ProductBuscaService} from './busca/busca.service';
 
 @NgModule({
     declarations: [
@@ -36,8 +36,8 @@ import {ProductBuscaService} from './busca/busca.service';
         PostTestComponent,
         UserComponent,
         RegisterComponent,
-        LoginComponent,
-        ProductBuscaComponent
+        LoginComponent
+        // ProductBuscaComponent
     ],
     imports: [
         BrowserModule,
