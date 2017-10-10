@@ -28,8 +28,9 @@ export class LoginComponent {
     this.userService.login(this.model.userName, this.model.userPassword)
     .then(sucess => {
       this.sucessoLogin = 'true';
+      location.reload();
       this.router.navigate(['/products']);
     }, error => this.sucessoLogin = 'false');
-    this.usuarioLogado = JSON.parse(localStorage.getItem('usuarioLogado'));
+    // this.usuarioLogado = JSON.parse(localStorage.getItem('usuarioLogado'));
   }
 }

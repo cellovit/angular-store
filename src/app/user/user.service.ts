@@ -22,6 +22,8 @@ export class UserService {
     JSON.stringify({userName: userName, UserPassword: userPassword}), { headers: this.headers })
     .toPromise().then(res => {
       // persiste o login do usuario na classe localStorage
+
+      localStorage.setItem('nomeUsuarioLogado', userName);
       localStorage.setItem('usuarioLogado', JSON.stringify(res.json().data as User));
     })
     .catch(this.handleError);
