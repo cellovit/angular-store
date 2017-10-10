@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { User } from '../user.model';
-import { UserService } from '../user.service';
-import { Response } from '@angular/http';
-import { FormsModule } from '@angular/forms';
+import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
+import {User} from '../user.model';
+import {UserService} from '../user.service';
+import {Response} from '@angular/http';
+import {FormsModule} from '@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -19,19 +19,20 @@ export class RegisterComponent {
 
   constructor(
     private router: Router,
-    private userService: UserService) { }
+    private userService: UserService) {}
 
-    register() {
-      this.userService.create(this.model).then(
-        sucess => {
-          this.sucessoCadastro = 'true';
+  register() {
+    this.userService.create(this.model).then(
+      sucess => {
+        this.sucessoCadastro = 'true';
+        this.router.navigate(['/home']);
       }, error => {
-          this.sucessoCadastro = 'false';
+        this.sucessoCadastro = 'false';
       });
-    }
+  }
 
-    gotoLogin() {
-      this.router.navigate(['/login']);
-    }
+  gotoLogin() {
+    this.router.navigate(['/login']);
+  }
 
 }

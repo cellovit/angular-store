@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { Product } from './product/product.model';
-import { ProductDetailComponent } from './product-detail/product-detail.component';
-import { ProductService } from './product/product.service';
-import { UserService } from './user/user.service';
-import { User } from './user//user.model';
-import { Router } from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+import {Product} from './product/product.model';
+import {ProductDetailComponent} from './product-detail/product-detail.component';
+import {ProductService} from './product/product.service';
+import {UserService} from './user/user.service';
+import {User} from './user//user.model';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -15,7 +15,7 @@ import { Router } from '@angular/router';
 export class AppComponent implements OnInit {
 
   constructor(
-    private router: Router) { }
+    private router: Router) {}
 
   usuarioLogado: User;
   usuarioLogadoBool: string;
@@ -31,7 +31,7 @@ export class AppComponent implements OnInit {
       console.log('nome usuario');
       console.log(localStorage.getItem('nomeUsuarioLogado'));
       this.nomeUsuario = localStorage.getItem('nomeUsuarioLogado');
-    }else {
+    } else {
       console.log('usuario nao logado !!!!');
       this.usuarioLogadoBool = 'false';
     }
@@ -41,7 +41,7 @@ export class AppComponent implements OnInit {
     localStorage.removeItem('usuarioLogado');
     localStorage.removeItem('nomeUsuarioLogado');
     location.reload();
-    this.router.navigate(['/products']);
+    this.router.navigate(['/home']);
   }
 
 }
