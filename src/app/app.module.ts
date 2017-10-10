@@ -15,7 +15,7 @@ import {ProductDetailComponent} from './product-detail/product-detail.component'
 import {HomeComponent} from './home/home.component';
 import {PostTestComponent} from './post-test/post-test.component';   // test only
 import {UserComponent} from './user/user.component';
-import {ProductBuscaComponent} from './busca/busca.component'
+import {ProductBuscaComponent} from './busca/busca.component';
 
 import {RegisterComponent} from './user/register/register.component';
 import {LoginComponent} from './user/login/login.component';
