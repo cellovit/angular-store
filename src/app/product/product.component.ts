@@ -17,13 +17,19 @@ export class ProductComponent implements OnInit {
   constructor(private productService: ProductService, private router: Router) { }
 
   products: Product[];
-
+  usuarioLogadoBool: string;
   getProducts(): void {
     this.productService.getProducts().then(products => this.products = products);
   }
 
   ngOnInit(): void {
     this.getProducts();
+    if (localStorage.getItem('usuarioLogado') != null) {
+      this.usuarioLogadoBool = 'true';
+    }else {
+      console.log('usuario nao logado !!!!');
+      this.usuarioLogadoBool = 'false';
+    }
   }
 
   gotoDetail(id: string): void {

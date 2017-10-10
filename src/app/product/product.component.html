@@ -1,8 +1,25 @@
 <h2>Produtos</h2>
+<br/>
 <ul class="products">
-  <a (click)="gotoDetail(product.id)" [routerLink]="['/product-detail', product.id]" *ngFor="let product of products">
-    {{product.productName}}   <br/> 
-  </a>
+  <div (click)="gotoDetail(product.id)" [routerLink]="['/product-detail', product.id]" *ngFor="let product of products">
+
+    <div class="row">
+      <div class="col-lg-2 col-md-2">
+          <img src="https://escritoriodeprojetos.com.br/images/jdownloads/fileimages/xlsx.png" class="img-responsive" />
+      </div>
+      <div class="col-lg-6 col-md-6">
+          <a>{{product.productName}}</a> 
+          <br/>
+          Preço : R$ : {{product.productPriceInCents}},00
+          <br/><br/>
+          Descrição : {{product.productDescription}}
+      </div>
+      <div class="col-lg-4 col-md-4">
+        <button class="btn btn-primary"> Adicionar ao Carrinho </button>
+      </div>
+    </div>
+  <br/> 
+  </div>
   
 </ul>
 <!-- 

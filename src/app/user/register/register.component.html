@@ -12,7 +12,7 @@
 
   <form name="form" (ngSubmit)="f.form.valid && register()" #f="ngForm" novalidate>
       <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !userName.valid }">
-          <label for="userName">Nome</label>
+          <label for="userName">Nome de usuário</label>
           <input type="text" class="form-control" name="userName" [(ngModel)]="model.userName" #userName="ngModel" required />
           <div *ngIf="f.submitted && !userName.valid" class="help-block">Campo Obrigatório</div>
       </div>
