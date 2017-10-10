@@ -25,7 +25,7 @@ export class RegisterComponent {
     this.userService.create(this.model).then(
       sucess => {
         this.sucessoCadastro = 'true';
-        this.router.navigate(['/home']);
+        this.gotoHome();
       }, error => {
         this.sucessoCadastro = 'false';
       });
@@ -35,4 +35,7 @@ export class RegisterComponent {
     this.router.navigate(['/login']);
   }
 
+  gotoHome() {
+    this.router.navigate(['/login']);
+  }
 }

@@ -1,11 +1,11 @@
 <div class="py-5 bg-gray">
-    <div class="container">
-    <div class="col-md-12 text-dark text-center">
+    <div class="container  bg-gray">
+    <div class="col-md-12 text-dark text-center  bg-gray">
 <h2>Produtos</h2>
 </div>
 <br/>
 <ul class="products">
-  <div (click)="gotoDetail(product.id)" [routerLink]="['/product-detail', product.id]" *ngFor="let product of products">
+  <div (click)="gotoDetail(product.id)" [routerLink]="['/product-detail', product.id]" *ngFor="let product of products" class="bg-gray">
       <div class="row">
         <div class="col-md-12">
           <div class="card w-50 mx-auto" style="">
