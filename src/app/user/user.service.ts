@@ -23,8 +23,10 @@ export class UserService {
     .toPromise().then(res => {
       // persiste o login do usuario na classe localStorage
 
+      // localStorage.setItem('idUsuarioLogado', JSON.stringify(res.json().data as User));
       localStorage.setItem('nomeUsuarioLogado', userName);
-      localStorage.setItem('usuarioLogado', JSON.stringify(res.json().data as User));
+      // persistindo o id do usuario no localstorage
+      localStorage.setItem('usuarioLogado', JSON.stringify(res.json()['id']));
     })
     .catch(this.handleError);
   }

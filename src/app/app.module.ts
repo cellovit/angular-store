@@ -16,7 +16,7 @@ import {HomeComponent} from './home/home.component';
 import {PostTestComponent} from './post-test/post-test.component';   // test only
 import {UserComponent} from './user/user.component';
 import {ProductBuscaComponent} from './busca/busca.component';
-
+import { CartComponent } from './cart/cart.component';
 import {RegisterComponent} from './user/register/register.component';
 import {LoginComponent} from './user/login/login.component';
 
@@ -26,6 +26,8 @@ import {PostService} from './post-test/post.service';
 import {ProductService} from './product/product.service';
 import {UserService} from './user/user.service';
 import {ProductBuscaService} from './busca/busca.service';
+import { CartService } from './cart/cart.service';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 @NgModule({
     declarations: [
@@ -37,7 +39,9 @@ import {ProductBuscaService} from './busca/busca.service';
         UserComponent,
         RegisterComponent,
         LoginComponent,
-        ProductBuscaComponent
+        ProductBuscaComponent,
+        CartComponent,
+        CheckoutComponent
     ],
     imports: [
         BrowserModule,
@@ -45,7 +49,7 @@ import {ProductBuscaService} from './busca/busca.service';
         AppRoutingModule,
         FormsModule
     ],
-    providers: [ProductService, PostService, UserService],
+    providers: [ProductService, PostService, UserService, CartService],
     bootstrap: [AppComponent]
 })
 

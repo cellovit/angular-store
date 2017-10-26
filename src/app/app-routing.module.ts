@@ -8,10 +8,12 @@ import {UserComponent} from './user/user.component';
 import {RegisterComponent} from './user/register/register.component';
 import {LoginComponent} from './user/login/login.component';
 import {ProductBuscaComponent} from './busca/busca.component';
+import { CartComponent } from './cart/cart.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 
 const routes: Routes = [
-    {path: '', redirectTo: '/dashboard', pathMatch: 'full'},
+    {path: '', redirectTo: '/home', pathMatch: 'full'},
     {path: 'home', component: HomeComponent},
     {path: 'product-detail/:id', component: ProductDetailComponent},
     {path: 'products', component: ProductComponent},
@@ -19,6 +21,8 @@ const routes: Routes = [
     {path: 'register', component: RegisterComponent},
     {path: 'login', component: LoginComponent},
     {path: 'busca', component: ProductBuscaComponent},
+    {path: 'cart', component: CartComponent},
+    {path: 'checkout', component: CheckoutComponent}
 ];
 
 @NgModule({
