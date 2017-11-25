@@ -6,8 +6,6 @@
   
           <h2>Checkout</h2>
 
-          <span> {{ messsage }} </span>
-         
           <br/>
   
           <div *ngFor="let product of cart.products" class="bg-gray">
@@ -29,7 +27,9 @@
               </div>
             </div>
           </div>
-  
+          
+          <span>Total : R${{ precoTotal }} </span>
+
           <hr>
   
           <a><button class="btn btn-outline-primary" (click)="finalizarCompra()" > Finalizar Compra </button> </a> 

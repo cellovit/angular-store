@@ -4,7 +4,7 @@
       <div class="card-header text-center"> Carrinho de {{cart.user.userName}}</div>
       <div class="card-body text-center">
 
-        <span> {{ messsage }} </span>
+        <span *ngIf="message === 'Carrinho Vazio'"> Carrinho Vazio </span>
         <!-- 
         <div *ngIf="messageSucess !== 'false'" style="margin: 0 auto" class="w-50 text-center position-relative alert alert-success">
         {{ messageSucess }} </div> -->
@@ -33,7 +33,7 @@
 
         <hr>
 
-        <a href="/checkout"> <button class="btn btn-outline-primary" > Checkout </button> </a> 
+        <a href="/checkout" *ngIf="message !== 'Carrinho Vazio'"> <button class="btn btn-outline-primary" > Checkout </button> </a> 
 
       </div>
     </div>
@@ -55,7 +55,7 @@
         <p>Produto removido com sucesso !</p>
       </div>
       <div class="modal-footer">
-        <button type="button" onclick="location.reload();" class="btn btn-default" data-dismiss="modal">Fechar</button>
+        <button type="button" (click)="rmv();" onclick="location.reload();" class="btn btn-default" data-dismiss="modal">Fechar</button>
       </div>
     </div>
 

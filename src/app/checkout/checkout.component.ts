@@ -14,11 +14,13 @@ export class CheckoutComponent implements OnInit {
   cart: Cart;
   messageSucess = 'false';
   message: string;
+  precoTotal = 0;
 
   getCart() {
 
     this.cartService.get().then(cart => {
       this.cart = cart;
+      this.precoTotal = cart.totalValue;
       console.log(cart.products.length);
 
       if (cart.products.length === 0) {
@@ -27,7 +29,15 @@ export class CheckoutComponent implements OnInit {
         this.message = '';
       }
     });
+  }
 
+  getTotal() {
+    this.cartService.get().then(cart => {
+      this.precoTotal = cart.totalValue;
+
+      console.log('total :' + this.precoTotal);
+
+    });
   }
 
   remove(productId: string) {
@@ -40,14 +50,20 @@ export class CheckoutComponent implements OnInit {
 
   finalizarCompra() {
 
-    this.cart.products.forEach(element => {
-      window.location.href = element.productLink;
-    });
+    // this.cart.products.forEach(element => {
+    //   window.location.href = element.productLink;
+    // });
 
   }
 
   ngOnInit() {
 
     this.getCart();
+
+    // this.cart.products.forEach(element => {
+    //   this.precoTotal += element.productPriceInCents;
+    // });
+
+    // console.log('total' + this.precoTotal);
   }
 }

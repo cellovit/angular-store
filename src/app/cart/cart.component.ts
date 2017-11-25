@@ -18,7 +18,7 @@ export class CartComponent implements OnInit {
 
   cart: Cart;
   messageSucess = 'false';
-  message: string;
+  message = '';
 
   getCart() {
 
@@ -28,6 +28,7 @@ export class CartComponent implements OnInit {
 
       if (cart.products.length === 0) {
         this.message = 'Carrinho Vazio';
+        console.log(this.message);
       }else {
         this.message = '';
       }
@@ -39,8 +40,15 @@ export class CartComponent implements OnInit {
     this.cartService.remove(productId);
     console.log('produto removido');
     this.messageSucess = 'Produto Removido com sucesso !';
+
     // this.router.navigate(['/products']);
     // this.router.navigate(['/cart']);
+  }
+
+  rmv() {
+    if (this.cart.products.length === 0) {
+      location.reload();
+    }
   }
 
   ngOnInit() {
