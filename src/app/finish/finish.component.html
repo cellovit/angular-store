@@ -1,0 +1,36 @@
+<div *ngIf="cart" class="bg-gray">
+  <div class="col-md-12 py-3 bg-gray">
+    <div class="card w-50 mx-auto" style="">
+      <div class="card-header text-center"> Carrinho de {{cart.user.userName}}</div>
+      <div class="card-body text-center">
+        <br/>
+
+        <div *ngFor="let product of cart.products" class="bg-gray">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card w-50 mx-auto" style="">
+
+                <div class="card-header text-center">
+                  <img src="https://escritoriodeprojetos.com.br/images/jdownloads/fileimages/xlsx.png" class="img-responsive">{{product.productName}}</div>
+                <div class="card-body text-center">
+                  <h6 class="card-subtitle text-muted">Pre&ccedil;o: R${{product.productPriceInCents}}</h6>
+                  <p class="card-text p-y-1">Descri&ccedil;&atilde;o:&nbsp; {{product.productDescription}} </p>
+                </div>
+                <div class="btn btn-outline-primary">
+                  link : <a target="_blank" (click)="goToProductLink(product.id)" > {{product.productLink}} </a>
+                </div>
+              </div>
+              <br/>
+            </div>
+          </div>
+        </div>
+
+        <hr>
+      </div>
+    </div>
+    <br/>
+
+
+
+  </div>
+</div>

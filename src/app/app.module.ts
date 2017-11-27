@@ -28,6 +28,7 @@ import {UserService} from './user/user.service';
 import {ProductBuscaService} from './busca/busca.service';
 import { CartService } from './cart/cart.service';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { FinishComponent } from './finish/finish.component';
 
 @NgModule({
     declarations: [
@@ -41,7 +42,8 @@ import { CheckoutComponent } from './checkout/checkout.component';
         LoginComponent,
         ProductBuscaComponent,
         CartComponent,
-        CheckoutComponent
+        CheckoutComponent,
+        FinishComponent
     ],
     imports: [
         BrowserModule,

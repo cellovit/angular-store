@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CartService } from '../cart/cart.service';
 import { Cart } from '../cart/cart.model';
 import { Product } from '../product/product.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-checkout',
@@ -10,7 +11,7 @@ import { Product } from '../product/product.model';
 })
 export class CheckoutComponent implements OnInit {
 
-  constructor(private cartService: CartService) { }
+  constructor(private cartService: CartService, private router: Router) { }
   cart: Cart;
   messageSucess = 'false';
   message: string;
@@ -49,21 +50,12 @@ export class CheckoutComponent implements OnInit {
   }
 
   finalizarCompra() {
-
-    // this.cart.products.forEach(element => {
-    //   window.location.href = element.productLink;
-    // });
+    this.router.navigate(['/finish']);
 
   }
 
   ngOnInit() {
 
     this.getCart();
-
-    // this.cart.products.forEach(element => {
-    //   this.precoTotal += element.productPriceInCents;
-    // });
-
-    // console.log('total' + this.precoTotal);
   }
 }

@@ -10,6 +10,7 @@ import {LoginComponent} from './user/login/login.component';
 import {ProductBuscaComponent} from './busca/busca.component';
 import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { FinishComponent } from './finish/finish.component';
 
 
 const routes: Routes = [
@@ -22,7 +23,8 @@ const routes: Routes = [
     {path: 'login', component: LoginComponent},
     {path: 'busca', component: ProductBuscaComponent},
     {path: 'cart', component: CartComponent},
-    {path: 'checkout', component: CheckoutComponent}
+    {path: 'checkout', component: CheckoutComponent},
+    {path: 'finish', component: FinishComponent}
 ];
 
 @NgModule({
