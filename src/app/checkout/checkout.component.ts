@@ -50,6 +50,9 @@ export class CheckoutComponent implements OnInit {
   }
 
   finalizarCompra() {
+
+    this.cartService.pay();
+
     this.router.navigate(['/finish']);
 
   }

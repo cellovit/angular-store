@@ -5,6 +5,7 @@ import 'rxjs/add/operator/map';
 import { Cart } from './cart.model';
 import { Http, Response, RequestOptions, Headers } from '@angular/http';
 import { User } from '../user/user.model';
+import { History } from '../history/history.model';
 
 
 @Injectable()
@@ -52,6 +53,18 @@ export class CartService {
                 .toPromise().then(res => res.json() as Cart);
         }
     }
+
+    pay(): Promise<any> {
+        this.idUsuarioLogado = localStorage.getItem('usuarioLogado').replace('\"', '');
+        this.idUsuarioLogado = this.idUsuarioLogado.replace('\"', '');
+
+        if (this.idUsuarioLogado !== '') {
+            return this.http.post(this.serviceUrl,
+                JSON.stringify({ Operation: 'pay', UserId: this.idUsuarioLogado}), { headers: this.headers })
+                .toPromise().then(res => this.message = '');
+        }
+    }
+
 }
 
 
