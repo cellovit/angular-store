@@ -32,6 +32,7 @@ import {UserService} from './user/user.service';
 import {ProductBuscaService} from './busca/busca.service';
 import { CartService } from './cart/cart.service';
 import { HistoryService } from './history/history.service';
+import { WishlistComponent } from './wishlist/wishlist.component';
 
 
 @NgModule({
@@ -50,6 +51,7 @@ import { HistoryService } from './history/history.service';
         FinishComponent,
         HistoryComponent,
         HistoryDetailComponent,
+        WishlistComponent,
     ],
     imports: [
         BrowserModule,

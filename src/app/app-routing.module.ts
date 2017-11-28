@@ -13,7 +13,7 @@ import { CheckoutComponent } from './checkout/checkout.component';
 import { FinishComponent } from './finish/finish.component';
 import { HistoryComponent } from './history/history.component';
 import { HistoryDetailComponent } from './history-detail/history-detail.component';
-
+import { WishlistComponent } from './wishlist/wishlist.component';
 
 const routes: Routes = [
     {path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -28,7 +28,8 @@ const routes: Routes = [
     {path: 'checkout', component: CheckoutComponent},
     {path: 'finish', component: FinishComponent},
     {path: 'history', component: HistoryComponent},
-    {path: 'history-detail/:id', component : HistoryDetailComponent}
+    {path: 'history-detail/:id', component : HistoryDetailComponent},
+    {path: 'wishlist', component: WishlistComponent }
 ];
 
 @NgModule({

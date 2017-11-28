@@ -26,6 +26,9 @@
     <!-- fodase -->
     <a class="btn btn-default navbar-btn btn-info" routerLink="/cart" *ngIf="usuarioLogadoBool === 'true'"><i class="fa fa-cart-arrow-down"></i>Carrinho</a>
     &nbsp;&nbsp;
+
+    <a class="btn btn-default navbar-btn btn-info" routerLink="/history" *ngIf="usuarioLogadoBool === 'true'"><i class="fa fa-credit-card"></i>Historico</a>
+    &nbsp;&nbsp;
     <!-- fodase -->
     <a class="btn btn-default navbar-btn btn-light" (click)="logout()" *ngIf="usuarioLogadoBool === 'true'"><i class="fa fa-fw fa-sign-out"></i>Logout</a>
   </nav>
