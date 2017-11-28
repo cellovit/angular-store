@@ -4,8 +4,8 @@
       <h2>Produtos</h2>
 
       <br/>
-
-      <div *ngIf="message !== 'false'" style="margin: 0 auto" class="w-50 text-center position-relative alert alert-success"> {{ message }} </div>
+      <div *ngIf="messageError !== 'false' && message === 'false' " style="margin: 0 auto" class="w-50 text-center position-relative alert alert-danger"> {{ messageError }} </div>
+      <div *ngIf="message !== 'false' && messageError === 'false'" style="margin: 0 auto" class="w-50 text-center position-relative alert alert-success"> {{ message }} </div>
     </div>
 
     <br/>
@@ -22,7 +22,7 @@
                 <p class="card-text p-y-1">Descri&ccedil;&atilde;o:&nbsp; {{product.productDescription}} </p>
                 <button (click)="addToCart(product.id)" class="btn btn-default btn-light">
                   <i class="fa fa-fw fa-cart-plus"></i>Adicionar ao Carrinho</button>
-                <button (click)="addToWishlist(product.id)" href="#" class="btn btn-default btn-dark">
+                <button (click)="addToWishlist(product.id)" class="btn btn-default btn-dark">
                   <i class="fa fa-fw fa-cart-plus"></i>Adicionar &agrave; Lista de Desejos</button>
               </div>
             </div>
@@ -33,3 +33,21 @@
     </ul>
   </div>
 </div>
+
+<!-- Modal -->
+<div class="modal fade in" data-backdrop="false" id="myModal">
+    <div class="modal-dialog">
+  
+      <!-- Modal content-->
+      <div class="modal-content">
+  
+        <div class="modal-body text-center">
+          <p>Produto já adicionado na lista de Desejos !</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" onclick="location.reload();" class="btn btn-default" data-dismiss="modal">Fechar</button>
+        </div>
+      </div>
+  
+    </div>
+  </div>
