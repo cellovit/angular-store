@@ -6,11 +6,12 @@
             <div class="card-body text-center">
               <h6 class="card-subtitle text-muted">Pre&ccedil;o: R${{product.productPriceInCents}},00</h6>
               <p class="card-text p-y-1">Descri&ccedil;&atilde;o:&nbsp; {{product.productDescription}} </p>
-              <p class="card-text p-y-1">Link: {{product.productLink}} </p>
-              <p class="card-text p-y-1">Categoria: {{product.productCategory}} </p>
-             <button (click)="addToCart(product.id)" class="btn btn-default btn-light">
+<!--               <p class="card-text p-y-1">Link: {{product.productLink}} </p> -->
+<!--               <p class="card-text p-y-1">Categoria: {{product.productCategory}} </p> -->
+             <button *ngIf="usuarioLogadoBool === 'true'" (click)="addToCart(product.id)" class="btn btn-default btn-light">
                   <i class="fa fa-fw fa-cart-plus"></i>Adicionar ao Carrinho</button>
-              <a href="#" class="btn btn-default btn-dark"><i class="fa fa-fw fa-cart-plus"></i>Adicionar &agrave; Lista de Desejos</a>
+              <a href="#" *ngIf="usuarioLogadoBool === 'true'" class="btn btn-default btn-dark"><i class="fa fa-fw fa-cart-plus"></i>Adicionar &agrave; Lista de Desejos</a>
+              <button class="btn btn-default btn-gray" (click)="sendMail(jhonnyot@gmail.com, {{product.productId}})" *ngIf="usuarioLogadoBool === 'true'"><i class="fa fa-fw fa-share"></i>Compartilhar</button>
             </div>
           </div>
           <br/>
