@@ -20,7 +20,7 @@
               <div class="card-body text-center">
                 <h6 class="card-subtitle text-muted">Pre&ccedil;o: R${{product.productPriceInCents}},00</h6>
                 <p class="card-text p-y-1">Descri&ccedil;&atilde;o:&nbsp; {{product.productDescription}} </p>
-                <button (click)=addToCart(product.id) class="btn btn-default btn-light">
+                <button (click)="addToCart(product.id)" class="btn btn-default btn-light">
                   <i class="fa fa-fw fa-cart-plus"></i>Adicionar ao Carrinho</button>
                 <a href="#" class="btn btn-default btn-dark">
                   <i class="fa fa-fw fa-cart-plus"></i>Adicionar &agrave; Lista de Desejos</a>

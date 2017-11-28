@@ -8,7 +8,8 @@
               <p class="card-text p-y-1">Descri&ccedil;&atilde;o:&nbsp; {{product.productDescription}} </p>
               <p class="card-text p-y-1">Link: {{product.productLink}} </p>
               <p class="card-text p-y-1">Categoria: {{product.productCategory}} </p>
-              <a href="#" class="btn btn-default btn-light"><i class="fa fa-fw fa-cart-plus"></i>Adicionar ao Carrinho</a>
+             <button (click)="addToCart(product.id)" class="btn btn-default btn-light">
+                  <i class="fa fa-fw fa-cart-plus"></i>Adicionar ao Carrinho</button>
               <a href="#" class="btn btn-default btn-dark"><i class="fa fa-fw fa-cart-plus"></i>Adicionar &agrave; Lista de Desejos</a>
             </div>
           </div>
