@@ -19,6 +19,10 @@ import {ProductBuscaComponent} from './busca/busca.component';
 import { CartComponent } from './cart/cart.component';
 import {RegisterComponent} from './user/register/register.component';
 import {LoginComponent} from './user/login/login.component';
+import { CheckoutComponent } from './checkout/checkout.component';
+import { FinishComponent } from './finish/finish.component';
+import { HistoryComponent } from './history/history.component';
+import { HistoryDetailComponent } from './history-detail/history-detail.component';
 
 // services
 
@@ -27,9 +31,8 @@ import {ProductService} from './product/product.service';
 import {UserService} from './user/user.service';
 import {ProductBuscaService} from './busca/busca.service';
 import { CartService } from './cart/cart.service';
-import { CheckoutComponent } from './checkout/checkout.component';
-import { FinishComponent } from './finish/finish.component';
-import { HistoryComponent } from './history/history.component';
+import { HistoryService } from './history/history.service';
+
 
 @NgModule({
     declarations: [
@@ -45,7 +48,8 @@ import { HistoryComponent } from './history/history.component';
         CartComponent,
         CheckoutComponent,
         FinishComponent,
-        HistoryComponent
+        HistoryComponent,
+        HistoryDetailComponent,
     ],
     imports: [
         BrowserModule,
@@ -53,7 +57,7 @@ import { HistoryComponent } from './history/history.component';
         AppRoutingModule,
         FormsModule
     ],
-    providers: [ProductService, PostService, UserService, CartService],
+    providers: [ProductService, PostService, UserService, CartService, HistoryService],
     bootstrap: [AppComponent]
 })
 

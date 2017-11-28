@@ -1,3 +1,38 @@
-<p>
-  history works!
-</p>
+<div *ngIf="historical" class="bg-gray">
+  <div class="col-md-12 py-3 bg-gray">
+    <div class="card w-50 mx-auto" style="">
+      <div class="card-header text-center"> Historico de Compras</div>
+      <div class="card-body text-center">
+
+        <span *ngIf="message === 'Historico Vazio'"> Historico Vazio </span>
+        <!-- 
+        <div *ngIf="messageSucess !== 'false'" style="margin: 0 auto" class="w-50 text-center position-relative alert alert-success">
+        {{ messageSucess }} </div> -->
+
+        <br/>
+
+        <div *ngFor="let history of historical" class="bg-gray">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card w-50 mx-auto" style="" (click)="goToHistory(history.id)" >
+                id : {{ history.id }}
+                <br/>
+                data : {{ history.date }}                
+              </div>
+              <br/>
+            </div>
+          </div>
+        </div>
+
+        <hr>
+
+        <!-- <a href="/checkout" *ngIf="message !== 'Historico Vazio'"> <button class="btn btn-outline-primary" > Checkout </button> </a>  -->
+
+      </div>
+    </div>
+    <br/>
+
+
+
+  </div>
+</div>

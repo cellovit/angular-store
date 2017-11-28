@@ -11,6 +11,8 @@ import {ProductBuscaComponent} from './busca/busca.component';
 import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { FinishComponent } from './finish/finish.component';
+import { HistoryComponent } from './history/history.component';
+import { HistoryDetailComponent } from './history-detail/history-detail.component';
 
 
 const routes: Routes = [
@@ -24,7 +26,9 @@ const routes: Routes = [
     {path: 'busca', component: ProductBuscaComponent},
     {path: 'cart', component: CartComponent},
     {path: 'checkout', component: CheckoutComponent},
-    {path: 'finish', component: FinishComponent}
+    {path: 'finish', component: FinishComponent},
+    {path: 'history', component: HistoryComponent},
+    {path: 'history-detail/:id', component : HistoryDetailComponent}
 ];
 
 @NgModule({
