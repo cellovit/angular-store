@@ -21,7 +21,7 @@ export class ProductDetailComponent implements OnInit {
     private route: ActivatedRoute,
     private location: Location,
     private cartService: CartService,
-  ) {}
+  ) { }
   message = 'false';
   ngOnInit(): void {
     this.route.paramMap
@@ -31,25 +31,27 @@ export class ProductDetailComponent implements OnInit {
   addToCart(productId: string) {
     this.cartService.add(productId).then(
       sucess => { window.scrollTo(0, 0); this.message = 'Produto Adicionado com sucesso !'; console.log('s'); },
-      error => { this.message = 'erro';
-                console.log('erro'); }) ;
+      error => {
+      this.message = 'erro';
+        console.log('erro');
+      });
   }
 
-  sendMail(target: string, productId: string) {
-    var email = require('../../../node_modules/emailjs/email');
-    var server = email.server.connect({
-      user:"templatestoregpms",
-      password: "bruxafilhadaputa",
-      host: "smtp.gmail.com",
-      ssl: true
-    });
+  // sendMail(target: string, productId: string) {
+  //   var email = require('../../../node_modules/emailjs/email');
+  //   var server = email.server.connect({
+  //     user: "templatestoregpms",
+  //     password: "bruxafilhadaputa",
+  //     host: "smtp.gmail.com",
+  //     ssl: true
+  //   });
 
-    server.send({
-      text: "http://localhost:4200/product-detail/" + productId,
-      from: "Template Store <templatestoregpms@gmail.com>",
-      to: target,
-      subject: "teste"
-    })
-  }
+  //   server.send({
+  //     text: "http://localhost:4200/product-detail/" + productId,
+  //     from: "Template Store <templatestoregpms@gmail.com>",
+  //     to: target,
+  //     subject: "teste"
+  //   })
+  // }
 
 }

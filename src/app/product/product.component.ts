@@ -52,6 +52,7 @@ export class ProductComponent implements OnInit {
   }
 
   addToWishlist(productId: string) {
+
     this.wishlistService.add(productId).then(
       sucess => { window.scrollTo(0, 0); this.message = 'Produto Adicionado com sucesso !'; console.log('s'); },
       error => { this.message = 'erro';
