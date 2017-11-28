@@ -7,7 +7,7 @@
 
       <div *ngIf="message !== 'false'" style="margin: 0 auto" class="w-50 text-center position-relative alert alert-success"> {{ message }} </div>
     </div>
-    
+
     <br/>
     <ul class="products" style="padding: 0;">
       <div *ngFor="let product of products" class="bg-gray">
@@ -22,8 +22,8 @@
                 <p class="card-text p-y-1">Descri&ccedil;&atilde;o:&nbsp; {{product.productDescription}} </p>
                 <button (click)="addToCart(product.id)" class="btn btn-default btn-light">
                   <i class="fa fa-fw fa-cart-plus"></i>Adicionar ao Carrinho</button>
-                <a href="#" class="btn btn-default btn-dark">
-                  <i class="fa fa-fw fa-cart-plus"></i>Adicionar &agrave; Lista de Desejos</a>
+                <button (click)="addToWishlist(product.id)" href="#" class="btn btn-default btn-dark">
+                  <i class="fa fa-fw fa-cart-plus"></i>Adicionar &agrave; Lista de Desejos</button>
               </div>
             </div>
             <br/>

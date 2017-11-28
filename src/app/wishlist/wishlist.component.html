@@ -1,39 +1,63 @@
 <div *ngIf="wishlist" class="bg-gray">
-    <div class="col-md-12 py-3 bg-gray">
-      <div class="card w-50 mx-auto" style="">
-        <div class="card-header text-center"> Lista de Desejos de {{wishlist.user.userName}}</div>
-        <div class="card-body text-center">
-  
-          <span *ngIf="message === 'Lista de Desejos Vazio'"> Lista de Desejos Vazia </span>
-          <!-- 
+  <div class="col-md-12 py-3 bg-gray">
+    <div class="card w-50 mx-auto" style="">
+      <div class="card-header text-center"> Lista de Desejos de {{wishlist.user.userName}}</div>
+      <div class="card-body text-center">
+
+        <span *ngIf="message === 'Lista de Desejos Vazia'"> Lista de Desejos Vazia </span>
+        <!-- 
           <div *ngIf="messageSucess !== 'false'" style="margin: 0 auto" class="w-50 text-center position-relative alert alert-success">
           {{ messageSucess }} </div> -->
-  
-          <br/>
-  
-          <div *ngFor="let product of wishlist.products" class="bg-gray">
-            <div class="row">
-              <div class="col-md-12">
-                <div class="card w-50 mx-auto" style="">
-  
-                  <div class="card-header text-center">
-                    <img src="https://escritoriodeprojetos.com.br/images/jdownloads/fileimages/xlsx.png" class="img-responsive">{{product.productName}}</div>
-                  <div class="card-body text-center">
-                    <h6 class="card-subtitle text-muted">Pre&ccedil;o: R${{product.productPriceInCents}}</h6>
-                    <p class="card-text p-y-1">Descri&ccedil;&atilde;o:&nbsp; {{product.productDescription}} </p>
-                  </div>
-                 
+
+        <br/>
+
+        <div *ngFor="let product of wishlist.products" class="bg-gray">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card w-50 mx-auto" style="">
+
+                <div class="card-header text-center">
+                  <img src="https://escritoriodeprojetos.com.br/images/jdownloads/fileimages/xlsx.png" class="img-responsive">{{product.productName}}</div>
+                <div class="card-body text-center">
+                  <h6 class="card-subtitle text-muted">Pre&ccedil;o: R${{product.productPriceInCents}}</h6>
+                  <p class="card-text p-y-1">Descri&ccedil;&atilde;o:&nbsp; {{product.productDescription}} </p>
                 </div>
-                <br/>
+
+                <button (click)="addToCart(product.id)" class="btn btn-default btn-light">
+                  <i class="fa fa-fw fa-cart-plus"></i>Adicionar ao Carrinho</button>
+                <button data-toggle="modal" data-target="#myModal" class="btn btn-outline-primary" (click)="remove(product.id)">
+                  Remover
+                </button>
+
               </div>
+              <br/>
             </div>
           </div>
-
         </div>
+
       </div>
-      <br/>
-  
-  
-  
     </div>
+    <br/>
+
+
+
   </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade in" data-backdrop="false" id="myModal">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+
+      <div class="modal-body text-center">
+        <p>Produto removido com sucesso !</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" (click)="rmv();" onclick="location.reload();" class="btn btn-default" data-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+
+  </div>
+</div>

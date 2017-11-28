@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 import {Headers, Response} from '@angular/http';
 import { Router } from '@angular/router';
 import { CartService } from '../cart/cart.service';
+import { WishlistService } from '../wishlist/wishlist.service';
 
 
 @Component({
@@ -17,7 +18,7 @@ export class ProductComponent implements OnInit {
 
   constructor(private productService: ProductService,
               private router: Router,
-              private cartService: CartService ) { }
+              private cartService: CartService, private wishlistService: WishlistService ) { }
 
   products: Product[];
   usuarioLogadoBool: string;
@@ -45,6 +46,13 @@ export class ProductComponent implements OnInit {
 
   addToCart(productId: string) {
     this.cartService.add(productId).then(
+      sucess => { window.scrollTo(0, 0); this.message = 'Produto Adicionado com sucesso !'; console.log('s'); },
+      error => { this.message = 'erro';
+                console.log('erro'); }) ;
+  }
+
+  addToWishlist(productId: string) {
+    this.wishlistService.add(productId).then(
       sucess => { window.scrollTo(0, 0); this.message = 'Produto Adicionado com sucesso !'; console.log('s'); },
       error => { this.message = 'erro';
                 console.log('erro'); }) ;

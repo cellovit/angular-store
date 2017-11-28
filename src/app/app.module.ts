@@ -23,6 +23,7 @@ import { CheckoutComponent } from './checkout/checkout.component';
 import { FinishComponent } from './finish/finish.component';
 import { HistoryComponent } from './history/history.component';
 import { HistoryDetailComponent } from './history-detail/history-detail.component';
+import { WishlistComponent } from './wishlist/wishlist.component';
 
 // services
 
@@ -32,7 +33,7 @@ import {UserService} from './user/user.service';
 import {ProductBuscaService} from './busca/busca.service';
 import { CartService } from './cart/cart.service';
 import { HistoryService } from './history/history.service';
-import { WishlistComponent } from './wishlist/wishlist.component';
+import { WishlistService } from './wishlist/wishlist.service';
 
 
 @NgModule({
@@ -59,7 +60,7 @@ import { WishlistComponent } from './wishlist/wishlist.component';
         AppRoutingModule,
         FormsModule
     ],
-    providers: [ProductService, PostService, UserService, CartService, HistoryService],
+    providers: [ProductService, PostService, UserService, CartService, HistoryService, WishlistService],
     bootstrap: [AppComponent]
 })
 
